@@ -1,0 +1,86 @@
+---
+layout: post
+title: 【python】"join"和"+"有什么区别？
+date: 2023-10-15 00:00:00 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+img: pintu.jpg # Add image post (optional)
+tags: [Python, Software] # add tag
+---
+
+python编程拼接字符串，经常用join和+，它俩拼接字符串的结果是一样的，举个例子：
+
+```shell
+if __name__ == "__main__":
+    a = "hello"
+    b = "world"
+    print(a + b)
+    print("".join([a, b]))
+
+```
+![运行结果](https://i0.hdslb.com/bfs/article/87b1be62a99ae465d1313e09b8320dc86816fa6b.png@1256w_214h_!web-article-pic.webp "运行结果")
+
+但是: `join连接效率 > 操作符+连接效率`
+
+举例：将999999个“atiaisi”拼接起来
+```shell
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+def timer(func):
+    def func_wrapper(*args, **kwargs):
+        from time import time
+        start_time = time()
+        result = func(*args, **kwargs)
+        end_time = time()
+        spend_time = end_time - start_time
+        print(f"{func.__name__} cost time {spend_time}")
+        return result
+    return func_wrapper
+
+
+@timer
+def plus_test(str_list):
+    res = ""
+    for ele in str_list:
+        res = res + ele
+
+
+@timer
+def join_test(str_list):
+    res = ""
+    res = "".join(str_list)
+    # print(res)
+
+
+if __name__ == "__main__":
+    str_list = ["atiaisi" for i in range(999999)]
+    plus_test(str_list)
+    join_test(str_list)
+```
+
+运行结果如下：
+
+![运行结果](https://i0.hdslb.com/bfs/article/cf089748ae5773d65648b80f63753d26f154db66.png@1256w_214h_!web-article-pic.webp "运行结果")
+
+可以明显看出join执行速度比+快很多，效率提升了大概190倍。
+
+原因：字符串是不可变的对象，就不在字符串本身做文章了，那就另外开辟空间。
+
++号在拼接字符串的时候，会先开辟一块空间，把+号左边的字符串和+号右边的字符串合起来放在新开辟的空间内，这样有几个+号，就会开辟几次空间。
+
+![运行结果](https://i0.hdslb.com/bfs/article/431f936247909807fc72e8c92181fe7ad067f332.png@1256w_420h_!web-article-pic.webp "运行结果")
+
+
+join拼接字符串也需要开辟空间，但是会提前算好总共需要开辟多大的空间，一次性把内存申请好，然后把所有的字符串合起来放在这个新的空间中，这样就不用频繁申请空间了。
+![运行结果](https://i0.hdslb.com/bfs/article/3bdfc936ddec1da85791f68e22e287d65e5a44b0.png@1256w_274h_!web-article-pic.webp "运行结果")
+
+总结：
+
+1、优先使用join拼接字符串。数据量越大，效率差异越明显。
+
+2、从内存消耗上来看，+操作符消耗的内存要比join消耗的内存大。多在中间临时生成的字符串对象占用的内存。
+
+以上是自己根据网上资料总结和扩展的，了解的不深，如果哪些知识点有误，欢迎指正~ 
+
+
+![激动](https://i0.hdslb.com/bfs/article/00a347e06fd3c956d8cad5dc734080a1cc3aed46.gif@!web-article-pic.webp)
+
