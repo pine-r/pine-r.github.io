@@ -5,6 +5,7 @@ date: 2023-10-15 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: pintu.jpg # Add image post (optional)
 tags: [Python, Software] # add tag
+categories: Python
 ---
 
 python编程拼接字符串，经常用join和+，它俩拼接字符串的结果是一样的，举个例子：
