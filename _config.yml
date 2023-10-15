@@ -3,10 +3,20 @@ description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-permalink: ':title/'
+permalink: /:categories/:title/
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
+
+# List of links in the navigation bar
+navbar-links:
+  主页: "https://pine-r.github.io"
+  分类: "https://pine-r.github.io/categories/"
+  标签: "https://pine-r.github.io/tags/"
+  项目:
+    - Learn markdown: "http://www.markdowntutorial.com/"
+  关于我: "aboutme"
+  搜索: "search"
 
 # Author Settings
 author: Tingsong Ren # add your name
@@ -19,7 +29,7 @@ social-linkedin: # add your Linkedin handle
 social-email: # add your Email address
 
 # Disqus
-# discus-identifier: mr-brown # add your discus identifier
+# discus-identifier: mr-brown # add your discus identifier  评论
 
 # Tracker
 analytics: # Google Analytics
@@ -35,3 +45,6 @@ paginate: 8
 paginate_path: "/page/:num"
 
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+
+# 添加category内容
+
