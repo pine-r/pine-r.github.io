@@ -4,24 +4,14 @@ description: > # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 permalink: /:categories/:title/
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
-# List of links in the navigation bar
-navbar-links:
-  主页: "https://pine-r.github.io"
-  分类: "https://pine-r.github.io/categories/"
-  标签: "https://pine-r.github.io/tags/"
-  项目:
-    - Learn markdown: "http://www.markdowntutorial.com/"
-  关于我: "aboutme"
-  搜索: "search"
-
 # Author Settings
 author: Tingsong Ren # add your name
-author-img: david-freeman.jpg # add your photo
-about-author: . # add description
+author-img: header.jpg # add your photo
+about-author: 如果你成了原因论的信徒，那就会在过去的束缚之下永远无法获得幸福。 # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: pine-r # add your Github handle
@@ -46,5 +36,10 @@ paginate_path: "/page/:num"
 
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
 
-# 添加category内容
-
+# 导航栏
+navbar-links:
+  主页: "#"
+  分类: "https://pine-r.github.io/categories/"
+  标签: "https://pine-r.github.io/tags/"
+  关于我: "#"
+  搜索: "#"

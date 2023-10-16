@@ -5,7 +5,7 @@ date: 2023-10-15 00:00:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: pintu.jpg # Add image post (optional)
 tags: [Python, Software] # add tag
-categories: Python
+category: Python
 ---
 
 python编程拼接字符串，经常用join和+，它俩拼接字符串的结果是一样的，举个例子：
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     print("".join([a, b]))
 
 ```
-![运行结果](https://i0.hdslb.com/bfs/article/87b1be62a99ae465d1313e09b8320dc86816fa6b.png@1256w_214h_!web-article-pic.webp "运行结果")
+![运行结果](https://raw.githubusercontent.com/pine-r/pine-r.github.io/master/assets/img/david-freeman.jpg "运行结果")
 
 但是: `join连接效率 > 操作符+连接效率`
 

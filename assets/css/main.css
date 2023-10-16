@@ -886,6 +886,7 @@ table tfoot td {
 .wrapper {
   max-width: 1250px;
   position: relative;
+  margin: auto;
 }
 
 .post, .article-page {
@@ -928,7 +929,7 @@ table tfoot td {
           justify-content: space-between;
   position: fixed;
   top: 0;
-  left: 0;
+  left: auto;
   bottom: 0;
   width: 240px;
   height: 100%;
@@ -1478,4 +1479,27 @@ a.newer-posts:hover {
   .post .post-content .post-title a {
     font-size: 21px;
   }
+}
+
+/* 导航栏样式 */
+.navbar {
+  display: flex;
+  position: fixed;
+  height: 50px;
+  right: 0%;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
 }
